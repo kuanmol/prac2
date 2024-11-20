@@ -2,8 +2,8 @@ pipeline {
 
     agent any
     tools {
-        maven "MAVEN3"
-        jdk "OracleJDK11"
+        maven "MVN3"
+        jdk "JDK11"
     }
     environment {
         registry="anmolk992/student-exp"
@@ -53,7 +53,7 @@ pipeline {
             }
 
             steps {
-                withSonarQubeEnv('sonar') {
+                withSonarQubeEnv('sonarserver') {
                     sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=studentcrud \
                     -Dsonar.projectName=studentcrud \
                     -Dsonar.projectVersion=0.0.1-SNAPSHOT \
