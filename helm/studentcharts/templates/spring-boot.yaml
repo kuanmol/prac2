@@ -5,7 +5,7 @@ metadata:
   labels:
     app: springboot
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: springboot
@@ -21,7 +21,7 @@ spec:
         - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql://database-1.clewu8skqn5u.us-west-2.rds.amazonaws.com/studentdb
+          value: jdbc:mysql://stud.clewu8skqn5u.us-west-2.rds.amazonaws.com/studentdb
         - name: SPRING_DATASOURCE_USERNAME
           value: admin
         - name: SPRING_DATASOURCE_PASSWORD
